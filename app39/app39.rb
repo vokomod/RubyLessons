@@ -1,4 +1,3 @@
-
 require 'sinatra'
 require 'tilt/erubis'  #4tob ne pizdel pri zapuske
 #erb - template engine dvizhok shablonov podderzhivaemiy sinatra (polniy spisok na saite sinatra)
