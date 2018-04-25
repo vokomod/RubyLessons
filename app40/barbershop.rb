@@ -9,10 +9,10 @@ post '/' do
   @userPhoneNumber = params[:userPhoneNumber]
   @dateAndTime = params[:dateAndTime]
 
-  erb :message
-
   @title = "Hello #{@userName}, you are welcome!!"
   @message = "Your phone number #{@userPhoneNumber} is correct?
               We are waitnig for you at #{@dateAndTime}"
+
+  erb :message
 
 end
