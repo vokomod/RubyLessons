@@ -19,6 +19,28 @@ post '/' do
   fileDataInput.close
 
   erb :message
+end
+
+get '/admin' do
+  erb :admin
+end
 
 
+post '/admin' do
+  @adminPassword = params[:adminPassword]
+
+  if @adminPassword.strip == "zzz"
+
+    fileDataOutput = File.open 'users.txt', 'r'
+    linesArr = []
+    while (line = fileDataOutput.gets)
+      lineData = line.strip
+      linesArr << lineData
+    end
+    @fileData = linesArr
+    fileDataOutput.close
+
+    erb :data
+
+  end
 end
