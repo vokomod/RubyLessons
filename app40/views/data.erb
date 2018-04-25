@@ -4,4 +4,8 @@
 
 <br />
 
-<%= @fileData.each {|i| puts i} %>
+<% @fileData.each do |line| %>
+<%= "#{line} <br />" %>
+<% end %>
+
+<a href='/'>home</a>

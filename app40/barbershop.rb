@@ -25,7 +25,6 @@ get '/admin' do
   erb :admin
 end
 
-
 post '/admin' do
   @adminPassword = params[:adminPassword]
 
