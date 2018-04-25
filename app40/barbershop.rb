@@ -14,6 +14,11 @@ post '/' do
   @message = "Your phone number #{@userPhoneNumber} is correct?
               We are waitnig for you at #{@dateAndTime}"
 
+  fileDataInput = File.open 'users.txt', 'a'
+  fileDataInput.write "User: #{@userName}, phone: #{@userPhoneNumber}, date: #{@dateAndTime}\n"
+  fileDataInput.close
+
   erb :message
+
 
 end
