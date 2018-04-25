@@ -29,8 +29,10 @@ post '/admin' do
   @adminPassword = params[:adminPassword]
 
   if @adminPassword.strip == "zzz"
-
     erb :data
-
+  else
+    @message = "<a href='http://www.fuck.off'>go to mommy!</a>"
+    @title = "Ooooh, cool xakep!"
+    erb :message
   end
 end
