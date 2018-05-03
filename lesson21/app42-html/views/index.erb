@@ -1,0 +1,33 @@
+<html>
+<head>
+<%#  <link href="/styles.css" rel="stylesheet" media="all" /> %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+
+<body>
+
+<h1>
+    Welcome to ERB Barbershop!
+</h1>
+
+<%# <p class="something"> We are open </p> %>
+<p> We are open </p>
+<p> You are welcome </p>
+<%# <p id="greeting"> Come in </p>   <%#   etot id unikalen!!!   %>
+<p> Come in </p>
+
+<form class="something" action="/" method="POST">
+  Your name:<br />
+  <input type="text" name="userName" /> <br />
+  Your phone number:<br />
+  <input type="text" name="userPhoneNumber" /> <br />
+  Date and time:<br />
+  <input type="text" name="dateAndTime" /> <br />
+<br />
+  <input type="submit" class="btn btn-danger"/> <br />
+</form>
+
+<a href='/admin'>for the boss</a>
+
+</body>
+</html>

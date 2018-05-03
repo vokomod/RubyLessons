@@ -1,0 +1,22 @@
+/* Hello */  /*--- tak pishetsya komment */
+h1 {
+  font-family: Times;
+}
+p {
+  background-color: yellow;
+  color: blue;
+}
+.something {
+  background-color: magenta;
+  color: white;
+}
+#greeting {
+  background: green;
+}
+body {
+  font-family: Arial;
+  background-color: blue;
+}
+/* .something {} --- eto atribut class i pravila dlya nego
+/* something  {} --- pravila v {} budut primenyat'sya k tegu something */
+/* #something {} --- eto atribut ID i on unikalen dlya stroki
