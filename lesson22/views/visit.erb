@@ -1,0 +1,34 @@
+<h1>
+  Lets make an order!
+</h1>
+
+<form action="/visit" method="POST">
+  <div class="form-group">
+    <label>Name please</label>
+    <input name="userName" type="text" class="form-control" placeholder="Enter name here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - name">
+    <small class="form-text text-muted">We'll never share your name with anyone else</small>
+  </div>
+
+  <div class="form-group">
+    <label>Your phone number please</label>
+    <input name="userPhone" type="text" class="form-control" placeholder="Enter your phone number here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - phone">
+    <small class="form-text text-muted">We'll never share your phone number with anyone else</small>
+  </div>
+
+  <div class="form-group">
+    <label>Date please</label>
+    <input name="userDate" type="text" class="form-control" placeholder="Enter date here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - date">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Choose your barber</label>
+    <select name="barber" class="form-control" id="exampleFormControlSelect1">
+      <option>Walter White</option>
+      <option>Jessie Pinkman</option>
+      <option>Gus Fring</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Make an order</button>
+
+</form>

@@ -1,0 +1,4 @@
+User: andy, phone: 555, date: tomorrow
+User: petr, phone: 666, date: today
+User: den, phone: 444, date: after, barber: Jessie Pinkman
+User: Mick, phone: 999, date: day, barber: Gus Fring
