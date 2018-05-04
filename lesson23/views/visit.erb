@@ -31,7 +31,7 @@
 
   <div class="form-group">
     <label>Needed hair color</label>
-      <select id="color" name="colorpicker">
+      <select name="colorpicker-shortlist">
       <option value="#7bd148">Green</option>
       <option value="#5484ed">Bold blue</option>
       <option value="#a4bdfc">Blue</option>
@@ -52,11 +52,17 @@
 </form>
 
 <!-- podklu4it script vnutri koda stranici -->
+<!--podklu4aem colorpicker-->
+<!--kod vnutri function vipolnyaetsa posle zagruzki stranici-->
+<!--jquery DOMready po4itat v gugle-->
+<!--tak delaetsa v slu4ae kogda javascript v body-->
 <script type="text/javascript">
-  <!--alert('hello from visit page!');-->
-  $('#userPhoneBackground').css('background-color', 'yellow');
-  $('#userNameBackground').css('background-color', 'red');
-  $('.attributeClass').css('background-color', 'blue');
-  $('#color').simplecolorpicker();
 
+  $(function() {
+    $('select[name="colorpicker-shortlist"]').simplecolorpicker();
+    alert('hello from visit page!');
+    $('#userPhoneBackground').css('background-color', 'yellow');
+    $('#userNameBackground').css('background-color', 'red');
+    $('.attributeClass').css('background-color', 'blue');
+  });
 </script>

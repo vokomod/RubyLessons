@@ -5,3 +5,12 @@ User: Mick, phone: 999, date: day, barber: Gus Fring
 User: andy, phone: 999, date: tomorrow, barber: Gus Fring
 User: ewrwq, phone: qrweq, date: ewtwret, barber: Walter White, color: #5484ed
 User: ewrwq, phone: qrweq, date: ewtwret, barber: Walter White, color: #5484ed
+User: den, phone: 888, date: today, barber: Gus Fring, color: #46d6db
+User: , phone: , date: , barber: Walter White, color: #7bd148
+User: fdsf, phone: sdfs, date: sdfs, barber: Jessie Pinkman, color: #a4bdfc
+User: g, phone: g, date: g, barber: Jessie Pinkman, color: #51b749
+User: q, phone: q, date: q, barber: Walter White, color: #5484ed
+User: p, phone: p, date: p, barber: Gus Fring, color: #ff887c
+User: gg, phone: gg, date: gg, barber: Walter White, color: #51b749
+User: sad, phone: lklk, date: popopo, barber: Gus Fring, color: #fbd75b
+User: sac, phone: sac, date: dac, barber: Jessie Pinkman, color: #e1e1e1

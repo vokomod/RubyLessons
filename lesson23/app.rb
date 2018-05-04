@@ -26,7 +26,7 @@ post '/visit' do
   @userPhoneNumber = params[:userPhone]
   @dateAndTime = params[:userDate]
 	@barber = params[:barber]
-	@color = params[:colorpicker]
+	@color = params['colorpicker-shortlist']
 
   @title = "Hello #{@userName}, you are welcome!!"
   @message = "Your phone number #{@userPhoneNumber} is correct?

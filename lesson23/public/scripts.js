@@ -1,2 +1,2 @@
 // this is comment
-// alert('hello!');
+alert('hello!');
