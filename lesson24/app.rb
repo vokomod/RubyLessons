@@ -6,6 +6,7 @@ get '/' do
 end
 
 get '/about' do
+	@error = 'something going wrong'
 	erb :about
 end
 
@@ -28,16 +29,24 @@ post '/visit' do
 	@barber = params[:barber]
 	@color = params['colorpicker-shortlist']
 
-  @title = "Hello #{@userName}, you are welcome!!"
-  @message = "Your phone number #{@userPhoneNumber} is correct?
-              We are waitnig for you at #{@dateAndTime}
-							You want to color your hair in #{@color}"
+		if @userName == ''
+			@error = "Enter your name pls"
+			erb :visit
+		elsif @userPhoneNumber == ''
+			@error = "Enter your phone number pls"
+			erb :visit
+		else
+			@title = "Hello #{@userName}, you are welcome!!"
+		  @message = "Your phone number #{@userPhoneNumber} is correct?
+		              We are waitnig for you at #{@dateAndTime}
+									You want to color your hair in #{@color}"
 
-  fileDataInput = File.open './public/users.txt', 'a'
-  fileDataInput.write "User: #{@userName}, phone: #{@userPhoneNumber}, date: #{@dateAndTime}, barber: #{@barber}, color: #{@color}\n"
-  fileDataInput.close
+		  fileDataInput = File.open './public/users.txt', 'a'
+		  fileDataInput.write "User: #{@userName}, phone: #{@userPhoneNumber}, date: #{@dateAndTime}, barber: #{@barber}, color: #{@color}\n"
+		  fileDataInput.close
 
-	erb :message
+			erb :message
+		end
 end
 
 post '/contacts' do
