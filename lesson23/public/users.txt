@@ -3,3 +3,5 @@ User: petr, phone: 666, date: today
 User: den, phone: 444, date: after, barber: Jessie Pinkman
 User: Mick, phone: 999, date: day, barber: Gus Fring
 User: andy, phone: 999, date: tomorrow, barber: Gus Fring
+User: ewrwq, phone: qrweq, date: ewtwret, barber: Walter White, color: #5484ed
+User: ewrwq, phone: qrweq, date: ewtwret, barber: Walter White, color: #5484ed
