@@ -28,15 +28,21 @@ post '/visit' do
   @dateAndTime = params[:userDate]
 	@barber = params[:barber]
 	@color = params['colorpicker-shortlist']
+	@error = ''
 
 		if @userName == ''
 			@error = "Enter your name pls"
-			erb :visit
-		elsif @userPhoneNumber == ''
+		end
+
+		if @userPhoneNumber == ''
 			@error = "Enter your phone number pls"
+		end
+
+		if @error != ''
 			erb :visit
 		else
-			@title = "Hello #{@userName}, you are welcome!!"
+
+			@title = "Hello #{@userName}, you are welcome!! --- #{@error}"
 		  @message = "Your phone number #{@userPhoneNumber} is correct?
 		              We are waitnig for you at #{@dateAndTime}
 									You want to color your hair in #{@color}"
