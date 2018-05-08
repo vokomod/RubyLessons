@@ -28,19 +28,20 @@ post '/visit' do
   @dateAndTime = params[:userDate]
 	@barber = params[:barber]
 	@color = params['colorpicker-shortlist']
-	@error = ''
+	#@error = ''
 
 	hash = {:userName => 'Enter your name',
 					:userPhone => 'Enter your phone number',
 					:userDate => 'Enter valid date'}
 
-	hash.each do |k, v|
-		if params[k] == ''
-			@error = hash[k]
-			return erb :visit
-		end
-	end
+	#hash.each do |k, v|
+	#	if params[k] == ''
+	#		@error = hash[k]
+	#		return erb :visit
+	#	end
+	#end
 
+	@error = hash.select{|k,_| params[k] == ""}.values.join(", ")
 
 	if @error == ''
 		fileDataInput = File.open './public/users.txt', 'a'
@@ -49,6 +50,8 @@ post '/visit' do
 
 		@message = "Hello #{@userName}, you are welcome!! Your phone number #{@userPhoneNumber} is correct? We are waitnig for you at #{@dateAndTime} You want to color your hair in #{@color}"
 		erb :message
+	else
+		erb :visit
 	end
 end
 
