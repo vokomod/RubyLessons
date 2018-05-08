@@ -30,29 +30,26 @@ post '/visit' do
 	@color = params['colorpicker-shortlist']
 	@error = ''
 
-		if @userName == ''
-			@error = "Enter your name pls"
+	hash = {:userName => 'Enter your name',
+					:userPhone => 'Enter your phone number',
+					:userDate => 'Enter valid date'}
+
+	hash.each do |k, v|
+		if params[k] == ''
+			@error = hash[k]
+			return erb :visit
 		end
+	end
 
-		if @userPhoneNumber == ''
-			@error = "Enter your phone number pls"
-		end
 
-		if @error != ''
-			erb :visit
-		else
+	if @error == ''
+		fileDataInput = File.open './public/users.txt', 'a'
+		fileDataInput.write "User: #{@userName}, phone: #{@userPhoneNumber}, date: #{@dateAndTime}, barber: #{@barber}, color: #{@color}\n"
+		fileDataInput.close
 
-			@title = "Hello #{@userName}, you are welcome!! --- #{@error}"
-		  @message = "Your phone number #{@userPhoneNumber} is correct?
-		              We are waitnig for you at #{@dateAndTime}
-									You want to color your hair in #{@color}"
-
-		  fileDataInput = File.open './public/users.txt', 'a'
-		  fileDataInput.write "User: #{@userName}, phone: #{@userPhoneNumber}, date: #{@dateAndTime}, barber: #{@barber}, color: #{@color}\n"
-		  fileDataInput.close
-
-			erb :message
-		end
+		@message = "Hello #{@userName}, you are welcome!! Your phone number #{@userPhoneNumber} is correct? We are waitnig for you at #{@dateAndTime} You want to color your hair in #{@color}"
+		erb :message
+	end
 end
 
 post '/contacts' do
