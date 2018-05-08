@@ -5,19 +5,19 @@
 <form action="/visit" method="POST">
   <div class="form-group">
     <label>Name please</label>
-    <input id="userNameBackground" name="userName" type="text" class="form-control" placeholder="Enter name here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - name">
+    <input id="userNameBackground" name="userName" type="text" class="form-control" placeholder="Enter name here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - name" value="<%=@userName%>">
     <small class="form-text text-muted">We'll never share your name with anyone else</small>
   </div>
 
   <div class="form-group">
     <label>Your phone number please</label>
-    <input id="userPhoneBackground" name="userPhone" type="text" class="form-control" placeholder="Enter your phone number here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - phone">
+    <input id="userPhoneBackground" name="userPhone" type="text" class="form-control" placeholder="Enter your phone number here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - phone" value="<%=@userPhoneNumber%>">
     <small class="form-text text-muted">We'll never share your phone number with anyone else</small>
   </div>
 
   <div class="form-group">
     <label>Date please</label>
-    <input name="userDate" type="text" class="form-control attributeClass" placeholder="Enter date here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - date">
+    <input name="userDate" type="text" class="form-control attributeClass" placeholder="Enter date here" data-toggle="tooltip" data-placement="top" title="Tooltip on top - date" value="<%=@dateAndTime%>">
   </div>
 
   <div class="form-group">
