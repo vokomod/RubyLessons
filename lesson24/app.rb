@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'pony'
 
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"
@@ -28,18 +29,10 @@ post '/visit' do
   @dateAndTime = params[:userDate]
 	@barber = params[:barber]
 	@color = params['colorpicker-shortlist']
-	#@error = ''
 
 	hash = {:userName => 'Enter your name',
 					:userPhone => 'Enter your phone number',
 					:userDate => 'Enter valid date'}
-
-	#hash.each do |k, v|
-	#	if params[k] == ''
-	#		@error = hash[k]
-	#		return erb :visit
-	#	end
-	#end
 
 	@error = hash.select{|k,_| params[k] == ""}.values.join(", ")
 
@@ -65,6 +58,26 @@ post '/contacts' do
   fileDataInput = File.open './public/feedback.txt', 'a'
   fileDataInput.write "User: #{@emailFeedback}, text: #{@textFeedback}\n"
   fileDataInput.close
+
+	@text = params[:textFeedback]
+	@name = params[:emailFeedback]
+
+	Pony.options = {
+									:from => 'website@myfirstdomain.website',
+									:via => :smtp,
+									:body => "#{@text}",
+									:subject => "order for barber from #{@name}",
+  									:via_options => {
+											:address              => 'mail.gandi.net',
+    								 	:port                 => '587',
+    								 	:enable_starttls_auto => true,
+    								 	:user_name            => 'website@myfirstdomain.website',
+    								 	:password             => 'ghbdfnbpfwbZ1!',
+    								 	:authentication       => :plain,
+    								 	:domain               => "myfirstdomain.website"
+																		}
+									}
+	Pony.mail(:to => 'shtangech@mail.ru')
 
 	erb :message
 end
